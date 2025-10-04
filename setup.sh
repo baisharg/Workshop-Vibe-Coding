@@ -2,8 +2,8 @@
 
 set -e  # Exit on any error
 
-echo "Installing opencode..."
-curl -fsSL https://opencode.ai/install | bash
+echo "Installing droid..."
+curl -fsSL https://app.factory.ai/cli | sh
 
 echo "Installing Playwright test package..."
 npm install -g @playwright/test
@@ -16,5 +16,3 @@ npx playwright install
 
 echo "Installing Playwright MCP..."
 timeout 5 npx -y @playwright/mcp@latest
-
-echo "Setup complete! Screenshots will be saved to /tmp/playwright-mcp-output/ (symlinked as ./screenshots in this repo)"
