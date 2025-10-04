@@ -182,11 +182,4 @@ QA provee decisiones de gate: PASS ✅ / CONCERNS ⚠️ / FAIL ❌ / WAIVED �
 2. **Confiá en el proceso**: Los pasos de validación (PO, QA) atrapan issues temprano
 3. **Limpiá el contexto entre agentes**: Usá `/clear` o `/new` cuando cambies de agente
 
-## Pedí Ayuda
-
-- Revisá el [Workflow de Planning](./planning-workflow.md) para preguntas de la fase de planning
-- Revisá el [Workflow de Development](./development-workflow.md) para preguntas del loop de desarrollo
-
----
-
 **¿Listo para empezar?** Ejecutá `./setup.sh` y después seguí el [Workflow de Planning](./planning-workflow.md) para crear tu primer proyecto BMAD.
