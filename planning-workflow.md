@@ -2,7 +2,7 @@
 
 La fase de Planning se hace **una vez** al principio de tu proyecto. Acá es donde diseñás todo antes de escribir una sola línea de código.
 
-> **Inversión de Tiempo**: 1-3 horas para un proyecto típico
+> **Inversión de Tiempo**: ~1-3 horas para un proyecto típico
 > **Beneficio**: Te ahorra semanas de refactoring y confusión después
 
 ## Resumen
@@ -33,7 +33,7 @@ Planning tiene **4 pasos core** que son obligatorios, más 3 pasos opcionales pa
 ## Paso Core 1: Product Manager - Crear PRD
 
 **Agente**: Product Manager (`/pm`)
-**Comando**: `/pm *create-prd`
+**Comando**: Primero `/pm` (mensaje 1), después `*create-prd` (mensaje 2)
 **Input**: Tus notas del proyecto o descripción verbal
 **Output**: `docs/prd.md`
 
@@ -50,14 +50,18 @@ El PM te va a entrevistar sección por sección para crear un PRD completo:
 
 ### Cómo Ejecutar
 
+**⚠️ IMPORTANTE**: Los comandos de agente se ejecutan en **dos mensajes separados**:
+1. Primer mensaje: Activar el agente (ej: `/pm`)
+2. Segundo mensaje: Dar la tarea (ej: `*create-prd`)
+
 ```bash
 # Empezá fresco
 /clear
 
-# Invocá al PM
+# Mensaje 1: Activar el PM
 /pm
 
-# Después escribí el comando
+# Mensaje 2: Dar la tarea (esperá a que el agente cargue)
 *create-prd acá está mi idea: [pegá tus notas o describí verbalmente]
 
 # Alternativa: Referenciar un archivo con tus notas
@@ -89,7 +93,7 @@ El PM te va a entrevistar sección por sección para crear un PRD completo:
 ## Paso Core 2: Architect - Diseñar Arquitectura del Sistema
 
 **Agente**: Architect (`/architect`)
-**Comando**: `/architect *create-full-stack-architecture`
+**Comando**: Primero `/architect` (mensaje 1), después `*create-full-stack-architecture` (mensaje 2)
 **Input**: `docs/prd.md`
 **Output**: `docs/architecture.md`
 
@@ -110,10 +114,10 @@ El Architect lee tu PRD y diseña el sistema técnico completo:
 # Empezá fresco
 /clear
 
-# Invocá al Architect
+# Mensaje 1: Activar el Architect
 /architect
 
-# Después escribí el comando
+# Mensaje 2: Dar la tarea (esperá a que el agente cargue)
 *create-full-stack-architecture @docs/prd.md
 ```
 
@@ -144,7 +148,7 @@ El Architect lee tu PRD y diseña el sistema técnico completo:
 ## Paso Core 3: Product Owner - Validar Alineación
 
 **Agente**: Product Owner (`/po`)
-**Comando**: `/po *validate-alignment`
+**Comando**: Primero `/po` (mensaje 1), después `*validate-alignment` (mensaje 2)
 **Input**: `docs/prd.md` y `docs/architecture.md`
 **Output**: Reporte de validación (verbal o en notas)
 
@@ -163,10 +167,10 @@ El PO actúa como quality gate, chequeando:
 # Empezá fresco
 /clear
 
-# Invocá al PO para validación
+# Mensaje 1: Activar el PO
 /po
 
-# Después escribí el comando
+# Mensaje 2: Dar la tarea (esperá a que el agente cargue)
 *validate-alignment @docs/prd.md @docs/architecture.md
 ```
 
@@ -201,7 +205,7 @@ Si el PO encuentra issues:
 ## Paso Core 4: Product Owner - Shardear Documentos
 
 **Agente**: Product Owner (`/po`)
-**Comando**: `/po *shard-doc`
+**Comando**: Primero `/po` (mensaje 1), después `*shard-doc` (mensaje 2)
 **Input**: `docs/prd.md` y `docs/architecture.md`
 **Output**: Carpetas `docs/epics/` y `docs/stories/` con archivos shardeados
 
@@ -232,11 +236,15 @@ Con sharding:
 /clear
 
 # Shardear el PRD
+# Mensaje 1: Activar el PO
 /po
+# Mensaje 2: Dar la tarea (esperá a que el agente cargue)
 *shard-doc docs/prd.md
 
 # Shardear la Arquitectura
+# Mensaje 1: Activar el PO
 /po
+# Mensaje 2: Dar la tarea (esperá a que el agente cargue)
 *shard-doc docs/architecture.md
 ```
 

@@ -179,17 +179,13 @@ QA provee decisiones de gate: PASS ✅ / CONCERNS ⚠️ / FAIL ❌ / WAIVED �
 ## Tips para el Éxito
 
 1. **No te saltees el planning**: Completá PRD → Arquitectura → Sharding antes de cualquier código
-2. **Mantené las stories chicas**: Si una story tiene >3K tokens, shardeala más
-3. **Confiá en el proceso**: Los pasos de validación (PO, QA) atrapan issues temprano
-4. **Limpiá el contexto entre agentes**: Usá `/clear` o `/new` cuando cambies de agente
-5. **Documentá a medida que avanzás**: Las notas de cada story informan la siguiente
+2. **Confiá en el proceso**: Los pasos de validación (PO, QA) atrapan issues temprano
+3. **Limpiá el contexto entre agentes**: Usá `/clear` o `/new` cuando cambies de agente
 
 ## Pedí Ayuda
 
 - Revisá el [Workflow de Planning](./planning-workflow.md) para preguntas de la fase de planning
 - Revisá el [Workflow de Development](./development-workflow.md) para preguntas del loop de desarrollo
-- Unite a la comunidad de WhatsApp para soporte en vivo
-- Mirá el tutorial de YouTube para walkthroughs visuales
 
 ---
 

@@ -36,7 +36,7 @@ Antes de empezar el Loop de Development, tenés que tener:
 ## Paso 1: Scrum Master - Revisar Notas Anteriores
 
 **Agente**: Scrum Master (`/sm`)
-**Comando**: `/sm *review-notes`
+**Comando**: Primero `/sm` (mensaje 1), después `*review-notes` (mensaje 2)
 **Input**: Archivo de la story anterior (ej: `docs/stories/1.0.md`)
 **Output**: Aprendizajes para aplicar a la siguiente story
 
@@ -52,12 +52,17 @@ El Scrum Master revisa las notas de la story anterior:
 
 ### Cómo Ejecutar
 
+**⚠️ IMPORTANTE**: Los comandos de agente se ejecutan en **dos mensajes separados**:
+1. Primer mensaje: Activar el agente (ej: `/sm`)
+2. Segundo mensaje: Dar la tarea (ej: `*review-notes`)
+
 ```bash
 # Empezá fresco
 /clear
 
-# Revisar notas de la story anterior
+# Mensaje 1: Activar el SM
 /sm
+# Mensaje 2: Dar la tarea (esperá a que el agente cargue)
 *review-notes @docs/stories/1.0.md
 ```
 
@@ -81,7 +86,7 @@ En tu **primera story** (ej: 1.1), no hay notas anteriores. Saltate este paso y 
 ## Paso 2: Scrum Master - Draftear la Siguiente Story
 
 **Agente**: Scrum Master (`/sm`)
-**Comando**: `/sm *draft story X.X`
+**Comando**: Primero `/sm` (mensaje 1), después `*draft story X.X` (mensaje 2)
 **Input**:
 - Epic de `docs/epics/`
 - Slice de arquitectura relevante de `docs/architecture.md`
@@ -106,7 +111,7 @@ El SM crea una story súper clara con:
 # Empezá fresco (o continuá del Paso 1)
 /sm
 
-# Después escribí el comando
+# Mensaje 2: Dar la tarea (esperá a que el agente cargue)
 *draft story 1.1
 
 # O sé específico con referencia al epic
@@ -142,7 +147,7 @@ El SM va a leer SOLO:
 ## Paso 3: Product Owner - Validar Draft de Story
 
 **Agente**: Product Owner (`/po`)
-**Comando**: `/po *validate story`
+**Comando**: Primero `/po` (mensaje 1), después `*validate story` (mensaje 2)
 **Input**: Draft de story de `docs/stories/X.X.md`, PRD original
 **Output**: Reporte de validación (aprobación o feedback)
 
@@ -160,8 +165,9 @@ El PO actúa como quality gate:
 # Empezá fresco
 /clear
 
-# Validar el draft de la story
+# Mensaje 1: Activar el PO
 /po
+# Mensaje 2: Dar la tarea (esperá a que el agente cargue)
 *validate story @docs/stories/1.1.md
 ```
 
@@ -200,7 +206,7 @@ El PO actúa como quality gate:
 ## Paso 4: Developer - Implementación
 
 **Agente**: Developer (`/dev`)
-**Comando**: `/dev *develop-story`
+**Comando**: Primero `/dev` (mensaje 1), después `*develop-story` (mensaje 2)
 **Input**: Story aprobada de `docs/stories/X.X.md`
 **Output**:
 - Código de producción
@@ -227,8 +233,9 @@ El Developer implementa la story completamente:
 # Empezá fresco
 /clear
 
-# Desarrollar la story
+# Mensaje 1: Activar el Developer
 /dev
+# Mensaje 2: Dar la tarea (esperá a que el agente cargue)
 *develop-story @docs/stories/1.1.md
 ```
 
@@ -286,7 +293,7 @@ El Developer debe escribir:
 ## Paso 5: QA - Testear Story Exhaustivamente
 
 **Agente**: QA (`/qa`)
-**Comando**: `/qa *review`
+**Comando**: Primero `/qa` (mensaje 1), después `*review` (mensaje 2)
 **Input**: Archivo de story, código implementado, tests
 **Output**: Reporte de QA con decisión de gate
 
@@ -307,8 +314,9 @@ El QA conduce un review comprehensivo:
 # Empezá fresco
 /clear
 
-# Review de QA
+# Mensaje 1: Activar el QA
 /qa
+# Mensaje 2: Dar la tarea (esperá a que el agente cargue)
 *review @docs/stories/1.1.md
 ```
 
