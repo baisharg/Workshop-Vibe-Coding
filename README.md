@@ -22,7 +22,28 @@ Tres principios fundamentales:
 3. **Planning Estructurado**: Planning completo antes de codear - PRD, arquitectura, stories
 
 BMAD viene pre instalado en este repo. El repo original es https://github.com/bmad-code-org/bmad-method/
+
 ## Setup
+
+### 1. Forkeá este Repositorio
+
+Primero, forkeá este repositorio a tu cuenta de GitHub para tener tu propia copia.
+
+### 2. Elegí tu Entorno de Desarrollo
+
+Tenés dos opciones:
+
+**Opción A: Instalación Local**
+- Cloná tu fork y trabajá en tu computadora
+- Requiere tener instalado: Node.js, npm/npx
+
+**Opción B: GitHub Codespaces (Recomendado para empezar)**
+- 120 horas gratis por mes
+- VM con 4 cores y 16GB RAM
+- Todo pre-configurado, sin instalación local
+- Click en "Code" → "Codespaces" → "Create codespace on main"
+
+### 3. Instalá las Dependencias
 
 Ejecutá el script de setup para instalar droid CLI (un agente de terminal gratis) y las dependencias necesarias:
 
@@ -56,6 +77,8 @@ En droid, invocás los agentes en dos pasos:
 1. **Ejecutá el comando del agente**: `/pm`, `/architect`, `/dev`, etc.
 2. **Escribí el comando específico**: Una vez que el agente carga, escribís el comando (ej: `*create-prd`)
 
+**⚠️ IMPORTANTE**: Usá `/new` para limpiar el contexto antes de cambiar de agente. Esto asegura que cada agente reciba solo el contexto quirúrgico que necesita.
+
 Ejemplos:
 
 ```bash
@@ -63,22 +86,28 @@ Ejemplos:
 /pm
 *create-prd
 
+/new              # Limpiá el contexto antes de cambiar de agente
 /architect
 *create-full-stack-architecture
 
+/new
 /po
 *shard-doc docs/prd.md
 
 # Loop de desarrollo
+/new
 /sm
 *draft story 1.1
 
+/new
 /po
 *validate story @docs/stories/1.1.md
 
+/new
 /dev
 *develop-story @docs/stories/1.1.md
 
+/new
 /qa
 *review @docs/stories/1.1.md
 ```
