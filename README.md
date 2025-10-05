@@ -85,14 +85,17 @@ Ejemplos:
 # Fase de planning
 /pm
 *create-prd
+# Conversacion con Product Manager sobre detalles del producto...
 
 /new              # Limpiá el contexto antes de cambiar de agente
 /architect
 *create-full-stack-architecture
+# Conversacion con el Architect sobre detalles de la arquitectura...
 
 /new
 /po
-*shard-doc docs/prd.md
+*shard-doc @docs/prd.md and @docs/architecture.md
+*execute-checklist-po
 
 # Loop de desarrollo
 /new
